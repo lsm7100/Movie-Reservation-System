@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import com.mrs.app.Movie;
-
 public class Login extends SuperView {
 
 	private static final long serialVersionUID = -3656622646025106289L;

@@ -9,10 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import com.mrs.app.Movie;
-
 public class MovieInfo extends SuperView {
-	
+
 	private static final long serialVersionUID = -7740443590532007754L;
 
 	JButton b1 = new JButton(new ImageIcon("./image/one.jpg")); // 버튼에 이미지를 넣는다
@@ -29,15 +27,15 @@ public class MovieInfo extends SuperView {
 	public void createwindows() {
 
 		try {
-			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/movieView.png")))));
+			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/movieList.png")))));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		pack();
 
-		b1.setBounds(100, 189, 250, 250);
-		b2.setBounds(300, 189, 250, 250);
-		b3.setBounds(500, 189, 250, 250);
+		b1.setBounds(64, 125, 160, 230);
+		b2.setBounds(342, 125, 160, 230);
+		b3.setBounds(606, 125, 160, 230);
 
 		add(b1);
 		add(b2);
@@ -52,9 +50,5 @@ public class MovieInfo extends SuperView {
 		MovieInfo main = new MovieInfo();
 		main.createwindows();
 	}
-	
-	// mainProcess와 연동
-	public void setMain(Movie main) {
-		this.main = main;
-	}
+
 }
