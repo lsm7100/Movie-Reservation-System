@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import com.mrs.app.view.Login;
 import com.mrs.app.view.MovieInfo;
 import com.mrs.app.view.MovieList;
+import com.mrs.app.view.Register;
 
 public class Movie extends JFrame {
 
