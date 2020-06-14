@@ -16,8 +16,8 @@ public class Register extends JFrame {
 	private static final long serialVersionUID = 4309338501451187572L;
 	
 	JTextField rgName, rgId;
-	JButton btnCheck = new JButton(new ImageIcon("./image/check.png")); // 버튼에 이미지를 넣는다
-	JButton btnPrevious = new JButton(new ImageIcon("./image/previous.png")); // 버튼에 이미지를 넣는다
+	JButton btnCheck = new JButton(new ImageIcon("./image/button/check.png")); // 버튼에 이미지를 넣는다
+	JButton btnPrevious = new JButton(new ImageIcon("./image/button/previous.png")); // 버튼에 이미지를 넣는다
 	JPasswordField pw, pwConfirm;
 
 	public Register() {

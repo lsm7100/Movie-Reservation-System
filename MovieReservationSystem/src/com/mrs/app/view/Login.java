@@ -21,8 +21,8 @@ public class Login extends SuperView {
 	JTextField idField; // 텍스트 필드 변수
 	JPasswordField pwField; // 패스워드 필드 변수
 	
-	JButton btnRegister = new JButton(new ImageIcon("./image/join.png")); // 회원 등록 버튼에 이미지를 넣는다
-	JButton btnLogin = new JButton(new ImageIcon("./image/loginbutton.png")); // 버튼에 이미지를 넣는다
+	JButton btnRegister = new JButton(new ImageIcon("./image/button/join.png")); // 회원 등록 버튼에 이미지를 넣는다
+	JButton btnLogin = new JButton(new ImageIcon("./image/button/login.png")); // 버튼에 이미지를 넣는다
 
 	public Login() {
 		setTitle("MEGABIC_LOGIN"); // 메인이름
