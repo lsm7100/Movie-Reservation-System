@@ -12,8 +12,10 @@ import javax.swing.JLabel;
 
 import com.mrs.app.Movie;
 
-public class MovieList extends JFrame {
-	private Movie main;
+public class MovieList extends SuperView {
+
+	private static final long serialVersionUID = -827322840616802900L;
+
 	JButton b1 = new JButton(new ImageIcon("./image/one.jpg")); // 버튼에 이미지를 넣는다
 	JButton b2 = new JButton(new ImageIcon("./image/two.jpg")); // 버튼에 이미지를 넣는다
 	JButton b3 = new JButton(new ImageIcon("./image/three.jpg")); // 버튼에 이미지를 넣는다
@@ -22,7 +24,6 @@ public class MovieList extends JFrame {
 	JLabel lab3 = new JLabel("999명");
 
 	public MovieList() {
-
 		setTitle("MEGABIC");
 		setSize(600, 400);
 		setLayout(null);
@@ -63,8 +64,4 @@ public class MovieList extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	// mainProcess와 연동
-	public void setMain(Movie main) {
-		this.main = main;
-	}
 }

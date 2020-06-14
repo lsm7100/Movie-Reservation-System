@@ -5,11 +5,16 @@ import javax.swing.JFrame;
 import com.mrs.app.view.Login;
 import com.mrs.app.view.MovieInfo;
 import com.mrs.app.view.MovieList;
+import com.mrs.app.view.Register;
 
 public class Movie extends JFrame {
+
+	private static final long serialVersionUID = -7894793477727567194L;
+
 	Login login;
 	MovieList movieList;
 	MovieInfo movieInfo;
+	Register register;
 
 	public static void main(String[] args) {
 		Movie main = new Movie();
@@ -18,13 +23,16 @@ public class Movie extends JFrame {
 	}
 
 	public void showMovieList() {
-		login.dispose(); // 로그인 창 닫기
 		this.movieList = new MovieList(); // 영화 목록 창으로 이동.
 	}
 
 	public void showMovieInfo() {
-		movieList.dispose(); // 영화 목록 창 닫기
 		this.movieInfo = new MovieInfo(); // 영화 정보 창으로 이동.
 	}
 	
+	public void showRegister() {
+		this.register = new Register(); // 회원 등록 창으로 이동.
+	}
+
+
 }

@@ -1,7 +1,5 @@
 package com.mrs.app.view;
 
-import java.awt.Container;
-import java.awt.Label;
 import java.io.File;
 import java.io.IOException;
 
@@ -10,25 +8,22 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 import com.mrs.app.Movie;
 
-public class MovieInfo extends JFrame {
+public class MovieInfo extends SuperView {
 	
-	private Movie main;
+	private static final long serialVersionUID = -7740443590532007754L;
 
 	JButton b1 = new JButton(new ImageIcon("./image/one.jpg")); // 버튼에 이미지를 넣는다
 	JButton b2 = new JButton(new ImageIcon("./image/two.gif")); // 버튼에 이미지를 넣는다
 	JButton b3 = new JButton(new ImageIcon("./image/tree.jpg")); // 버튼에 이미지를 넣는다
 
 	public MovieInfo() {
-
 		setTitle("MEGABIC");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
-
 	}
 
 	public void createwindows() {

@@ -16,13 +16,14 @@ import javax.swing.JTextField;
 
 import com.mrs.app.Movie;
 
-public class Login extends JFrame {
+public class Login extends SuperView {
 
-	private Movie main;
-	private boolean bLoginCheck;
+	private static final long serialVersionUID = -3656622646025106289L;
+
 	JTextField idField; // 텍스트 필드 변수
-	JPasswordField pwField;
-
+	JPasswordField pwField; // 패스워드 필드 변수
+	
+	JButton btnRegister = new JButton(new ImageIcon("./image/loginbutton.png")); // 회원 등록 버튼에 이미지를 넣는다
 	JButton btnLogin = new JButton(new ImageIcon("./image/loginbutton.png")); // 버튼에 이미지를 넣는다
 
 	public Login() {
@@ -30,7 +31,7 @@ public class Login extends JFrame {
 		setSize(600, 400); // 사이즈
 		setLayout(null); // 레이아웃 없음
 		setResizable(false); // 사이즈 조절 못 함
-		createwindows();
+		createwindows(); 
 	}
 
 	public void createwindows() {
@@ -40,16 +41,21 @@ public class Login extends JFrame {
 			e.printStackTrace();
 		}
 		pack();
-		idField = new JTextField(25);
-		pwField = new JPasswordField(25);
+		idField = new JTextField(10);
+		pwField = new JPasswordField(15);
 
 		idField.setBounds(400, 160, 200, 40);
 		pwField.setBounds(400, 250, 200, 40);
 		btnLogin.setBounds(700, 189, 100, 35);
+		btnRegister.setBounds(700, 250, 100, 35);
 
 		btnLogin.setBorderPainted(true);
 		btnLogin.setFocusPainted(false);
 		btnLogin.setContentAreaFilled(false);
+		
+		btnRegister.setBorderPainted(true);
+		btnRegister.setFocusPainted(false);
+		btnRegister.setContentAreaFilled(false);
 
 		btnLogin.addActionListener(new ActionListener() {
 			@Override
@@ -58,40 +64,49 @@ public class Login extends JFrame {
 			}
 		});
 		
-		
+		btnRegister.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose(); // 자기 창 닫기
+				main.showRegister(); // 메인창 메소드를 이용해 영화 목록 창 띄우기
+			}
+		});
+
 		add(idField);
 		add(pwField);
 		add(btnLogin);
+		add(btnRegister);
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	public void isLoginCheck(){
-		if (idField.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "아이디를 입력하세요."); 
-		}else if (new String(pwField.getPassword()).trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "패스워드를 입력하세요."); 
-		}else {
-			if(idField.getText().equals("test") && new String(pwField.getPassword()).equals("1234")){
-				JOptionPane.showMessageDialog(null, "Success");
-				bLoginCheck = true;
-				// 로그인 성공이라면 매니져창 띄우기
-				if(isLogin()){
-					main.showMovieList(); // 메인창 메소드를 이용해 창띄우기
-				}					
-			}else{
-				JOptionPane.showMessageDialog(null, "아이디 혹은 패스워드가 잘못되었습니다."); 
+
+	public void isLoginCheck() {
+		String inputID = idField.getText().trim();
+		String inputPassword = new String(pwField.getPassword()).trim();
+
+		if (inputID.isEmpty()) { // ID 공백 검증
+			JOptionPane.showMessageDialog(null, "아이디를 입력하세요.");
+		} else if (inputPassword.isEmpty()) { // Password 공백 검증
+			JOptionPane.showMessageDialog(null, "패스워드를 입력하세요.");
+		} else { // 회원 정보 검증 로직
+			if (isLogin(inputID, inputPassword)) { // 회원 정보 검증 함수 호출
+				JOptionPane.showMessageDialog(null, "로그인에 성공했습니다.");
+				this.dispose(); // 자기 창 닫기
+				this.main.showMovieList(); // 메인창 메소드를 이용해 영화 목록 창 띄우기
+			} else { // 검증 실패.
+				JOptionPane.showMessageDialog(null, "아이디 혹은 패스워드가 잘못되었습니다.");
 			}
 		}
 	}
 
-	// mainProcess와 연동
-	public void setMain(Movie main) {
-		this.main = main;
-	}
-
-	public boolean isLogin() {
-		return bLoginCheck;
+	public boolean isLogin(String inputID, String inputPassword) {
+		boolean result = false;
+		
+		// DB에 ID, Password 조회하여 유효한지 검증.
+		if (inputID.equals("test") && inputPassword.equals("1234")) {
+			result = true;
+		}
+		return result;
 	}
 }
