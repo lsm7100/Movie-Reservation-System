@@ -1,68 +1,30 @@
 package com.mrs.app;
 
-import java.awt.Container;
-import java.awt.Label;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+
+import com.mrs.app.view.Login;
+import com.mrs.app.view.MovieInfo;
+import com.mrs.app.view.MovieList;
 
 public class Movie extends JFrame {
-
-	Label mainId, mainPw;
-	JTextField idfield, pwfield;
-	JButton btn1 = new JButton("확인");
-	ImageIcon icon;
-
-	Movie() {
-
-		setTitle("MEGABIX");
-		setSize(600, 400);
-		setLayout(null);
-
-	}
-
-	public void createwindows() {
-
-		Container con = getContentPane();
-        try {
-			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/1.PNG")))));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-        pack();
-//
-//		mainId = new Label("아이디");
-//		mainPw = new Label("패스워드");
-//
-//		idfield = new JTextField(20);
-//		pwfield = new JTextField(20);
-
-//		mainId.setBounds(600, 300, 50, 20);
-//		mainPw.setBounds(590, 360, 50, 20);
-//
-//		idfield.setBounds(700, 300, 100, 20);
-//		pwfield.setBounds(700, 360, 100, 20);
-//		btn1.setBounds(700, 400, 100, 30);
-
-//		add(mainId);
-//		add(mainPw);
-//		add(idfield);
-//		add(pwfield);
-//		add(btn1);
-//		
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	Login login;
+	MovieList movieList;
+	MovieInfo movieInfo;
 
 	public static void main(String[] args) {
-
 		Movie main = new Movie();
-		main.createwindows();
+		main.login = new Login(); // 로그인창 보이기
+		main.login.setMain(main); // 로그인창에게 메인 클래스보내기
 	}
+
+	public void showMovieList() {
+		login.dispose(); // 로그인 창 닫기
+		this.movieList = new MovieList(); // 영화 목록 창으로 이동.
+	}
+
+	public void showMovieInfo() {
+		movieList.dispose(); // 영화 목록 창 닫기
+		this.movieInfo = new MovieInfo(); // 영화 정보 창으로 이동.
+	}
+	
 }
