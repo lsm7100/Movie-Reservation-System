@@ -16,14 +16,14 @@ import javax.swing.JTextField;
 
 public class Login extends SuperView {
 
-	private static final long serialVersionUID = -3656622646025106289L;
+	private static final long serialVersionUID = -3656622646025106289L; //쓰레드 클래스 식별 시 사용 
 
 	JTextField idField; // 텍스트 필드 변수
 	JPasswordField pwField; // 패스워드 필드 변수
 	
 	JButton btnRegister = new JButton(new ImageIcon("./image/button/join.png")); // 회원 등록 버튼에 이미지를 넣는다
 	JButton btnLogin = new JButton(new ImageIcon("./image/button/login.png")); // 버튼에 이미지를 넣는다
-
+	
 	public Login() {
 		setTitle("MEGABIC_LOGIN"); // 메인이름
 		setSize(600, 400); // 사이즈
@@ -66,7 +66,7 @@ public class Login extends SuperView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose(); // 자기 창 닫기
-				main.showRegister(); // 메인창 메소드를 이용해 영화 목록 창 띄우기
+				main.showRegister(main); // 메인창 메소드를 이용해 영화 목록 창 띄우기
 			}
 		});
 
@@ -91,7 +91,7 @@ public class Login extends SuperView {
 			if (isLogin(inputID, inputPassword)) { // 회원 정보 검증 함수 호출
 				JOptionPane.showMessageDialog(null, "로그인에 성공했습니다.");
 				this.dispose(); // 자기 창 닫기
-				this.main.showMovieList(); // 메인창 메소드를 이용해 영화 목록 창 띄우기
+				this.main.showMovieList(main); // 메인창 메소드를 이용해 영화 목록 창 띄우기
 			} else { // 검증 실패.
 				JOptionPane.showMessageDialog(null, "아이디 혹은 패스워드가 잘못되었습니다.");
 			}

@@ -1,5 +1,7 @@
 package com.mrs.app.view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -11,10 +13,10 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Register extends JFrame {
+public class Register extends SuperView {
 
 	private static final long serialVersionUID = 4309338501451187572L;
-	
+
 	JTextField rgName, rgId;
 	JButton btnCheck = new JButton(new ImageIcon("./image/button/check.png")); // 버튼에 이미지를 넣는다
 	JButton btnPrevious = new JButton(new ImageIcon("./image/button/previous.png")); // 버튼에 이미지를 넣는다
@@ -30,7 +32,7 @@ public class Register extends JFrame {
 		rgId = new JTextField(25);
 		pw = new JPasswordField(25);
 		pwConfirm = new JPasswordField(25);
-		
+
 		createwindows();
 	}
 
@@ -48,6 +50,14 @@ public class Register extends JFrame {
 		rgId.setBounds(420, 200, 200, 40);
 		pw.setBounds(420, 270, 200, 40);
 		pwConfirm.setBounds(420, 340, 200, 40);
+
+		btnPrevious.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose(); // 자기 창 닫기
+				main.showLogin(main); // 메인창 메소드를 이용해 영화 목록 창 띄우기
+			}
+		});
 
 		add(btnPrevious);
 		add(btnCheck);
