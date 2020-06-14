@@ -1,6 +1,5 @@
 package com.mrs.app.view;
 
-import java.awt.Container;
 import java.awt.Label;
 import java.io.File;
 import java.io.IOException;
@@ -34,15 +33,15 @@ public class MovieInfo extends JFrame {
 	public void createwindows() {
 
 		try {
-			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/movieView.png")))));
+			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/movieList.png")))));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		pack();
 
-		b1.setBounds(100, 189, 250, 250);
-		b2.setBounds(300, 189, 250, 250);
-		b3.setBounds(500, 189, 250, 250);
+		b1.setBounds(64, 125, 160, 230);
+		b2.setBounds(342, 125, 160, 230);
+		b3.setBounds(606, 125, 160, 230);
 
 		add(b1);
 		add(b2);
