@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class InnocenceInfo extends SuperView {
+public class InnocenceInfo extends SuperView  {
 
 	private static final long serialVersionUID = -7740443590532007754L;
 
@@ -56,6 +56,8 @@ public class InnocenceInfo extends SuperView {
 				main.showMovieList(main);
 			}
 		});
+		
+		
 
 		add(preView);
 
