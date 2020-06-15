@@ -18,15 +18,15 @@ public class Register extends SuperView {
 	private static final long serialVersionUID = 4309338501451187572L;
 
 	JTextField rgName, rgId;
-	JButton btnCheck = new JButton(new ImageIcon("./image/button/check.png")); // ¹öÆ°¿¡ ÀÌ¹ÌÁö¸¦ ³Ö´Â´Ù
-	JButton btnPrevious = new JButton(new ImageIcon("./image/button/previous.png")); // ¹öÆ°¿¡ ÀÌ¹ÌÁö¸¦ ³Ö´Â´Ù
+	JButton btnCheck = new JButton(new ImageIcon("./image/button/check.png")); // ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â´ï¿½
+	JButton btnPrevious = new JButton(new ImageIcon("./image/button/previous.png")); // ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â´ï¿½
 	JPasswordField pw, pwConfirm;
 
 	public Register() {
-		setTitle("MEGABIC_REGISTER"); // ¸ÞÀÎÀÌ¸§
-		setSize(600, 400); // »çÀÌÁî
-		setLayout(null); // ·¹ÀÌ¾Æ¿ô ¾øÀ½
-		setResizable(false); // »çÀÌÁî Á¶Àý ¸ø ÇÔ
+		setTitle("MEGABIC_REGISTER");
+		setSize(600, 400);
+		setLayout(null);
+		setResizable(false);
 
 		rgName = new JTextField(25);
 		rgId = new JTextField(25);
@@ -54,8 +54,8 @@ public class Register extends SuperView {
 		btnPrevious.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // ÀÚ±â Ã¢ ´Ý±â
-				main.showLogin(main); // ¸ÞÀÎÃ¢ ¸Þ¼Òµå¸¦ ÀÌ¿ëÇØ ¿µÈ­ ¸ñ·Ï Ã¢ ¶ç¿ì±â
+				dispose();
+				main.showLogin(main);
 			}
 		});
 

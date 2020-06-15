@@ -14,21 +14,23 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import com.mrs.app.Movie;
+
 public class Login extends SuperView {
 
-	private static final long serialVersionUID = -3656622646025106289L; //¾²·¹µå Å¬·¡½º ½Äº° ½Ã »ç¿ë 
+	private static final long serialVersionUID = -3656622646025106289L; //ì“°ë ˆë“œ 
 
-	JTextField idField; // ÅØ½ºÆ® ÇÊµå º¯¼ö
-	JPasswordField pwField; // ÆĞ½º¿öµå ÇÊµå º¯¼ö
+	JTextField idField; // í…ìŠ¤íŠ¸ í•„ë“œ ë³€ìˆ˜ 
+	JPasswordField pwField; // ë¹„ë°€ë²ˆí˜¸ í…ìŠ¤íŠ¸ í•„ë“œ ë§Œë“¬
 	
-	JButton btnRegister = new JButton(new ImageIcon("./image/button/join.png")); // È¸¿ø µî·Ï ¹öÆ°¿¡ ÀÌ¹ÌÁö¸¦ ³Ö´Â´Ù
-	JButton btnLogin = new JButton(new ImageIcon("./image/button/login.png")); // ¹öÆ°¿¡ ÀÌ¹ÌÁö¸¦ ³Ö´Â´Ù
+	JButton btnRegister = new JButton(new ImageIcon("./image/button/join.png")); // íšŒì›ê°€ì… ë²„íŠ¼ì´ë¯¸ì§€
+	JButton btnLogin = new JButton(new ImageIcon("./image/button/login.png")); // ë¡œê·¸ì¸ ë²„íŠ¼ ì´ë¯¸ì§€
 	
 	public Login() {
-		setTitle("MEGABIC_LOGIN"); // ¸ŞÀÎÀÌ¸§
-		setSize(600, 400); // »çÀÌÁî
-		setLayout(null); // ·¹ÀÌ¾Æ¿ô ¾øÀ½
-		setResizable(false); // »çÀÌÁî Á¶Àı ¸ø ÇÔ
+		setTitle("MEGABIC_LOGIN"); // ì œëª©
+		setSize(600, 400); // ì‚¬ì´ì¦ˆ
+		setLayout(null); // ë ˆì´ì•„ì›ƒ ì„¤ì • ì•ˆí•¨
+		setResizable(false); // í™”ë©´ ì¡°ì ˆ ì•ˆ ë¨
 		createwindows(); 
 	}
 
@@ -65,8 +67,8 @@ public class Login extends SuperView {
 		btnRegister.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // ÀÚ±â Ã¢ ´İ±â
-				main.showRegister(main); // ¸ŞÀÎÃ¢ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇØ ¿µÈ­ ¸ñ·Ï Ã¢ ¶ç¿ì±â
+				dispose(); // ê¸°ì¡´ í™”ë©´ êº¼ì§
+				main.showRegister(main); // ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ Registerë¡œ ë„˜ì–´ê°
 			}
 		});
 
@@ -83,17 +85,17 @@ public class Login extends SuperView {
 		String inputID = idField.getText().trim();
 		String inputPassword = new String(pwField.getPassword()).trim();
 
-		if (inputID.isEmpty()) { // ID °ø¹é °ËÁõ
-			JOptionPane.showMessageDialog(null, "¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		} else if (inputPassword.isEmpty()) { // Password °ø¹é °ËÁõ
-			JOptionPane.showMessageDialog(null, "ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		} else { // È¸¿ø Á¤º¸ °ËÁõ ·ÎÁ÷
-			if (isLogin(inputID, inputPassword)) { // È¸¿ø Á¤º¸ °ËÁõ ÇÔ¼ö È£Ãâ
-				JOptionPane.showMessageDialog(null, "·Î±×ÀÎ¿¡ ¼º°øÇß½À´Ï´Ù.");
-				this.dispose(); // ÀÚ±â Ã¢ ´İ±â
-				this.main.showMovieList(main); // ¸ŞÀÎÃ¢ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇØ ¿µÈ­ ¸ñ·Ï Ã¢ ¶ç¿ì±â
-			} else { // °ËÁõ ½ÇÆĞ.
-				JOptionPane.showMessageDialog(null, "¾ÆÀÌµğ È¤Àº ÆĞ½º¿öµå°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+		if (inputID.isEmpty()) { // ID 
+			JOptionPane.showMessageDialog(null, "IDë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		} else if (inputPassword.isEmpty()) { // Password 
+			JOptionPane.showMessageDialog(null, "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		} else { // ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œê°€ ë§ì„ ë•Œ
+			if (isLogin(inputID, inputPassword)) { 
+				JOptionPane.showMessageDialog(null, "ì ‘ì† ë˜ì—ˆìŠµë‹ˆë‹¤.");
+				this.dispose(); 
+				this.main.showAccountInfo(main); // 
+			} else { // ë¹„ë°€ë²ˆí˜¸ ì˜¤ë¥˜ ì‹œ 
+				JOptionPane.showMessageDialog(null, "ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤ ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			}
 		}
 	}
@@ -101,7 +103,7 @@ public class Login extends SuperView {
 	public boolean isLogin(String inputID, String inputPassword) {
 		boolean result = false;
 		
-		// DB¿¡ ID, Password Á¶È¸ÇÏ¿© À¯È¿ÇÑÁö °ËÁõ.
+		// DB ID, Password
 		if (inputID.equals("test") && inputPassword.equals("1234")) {
 			result = true;
 		}
