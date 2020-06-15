@@ -27,7 +27,7 @@ public class Login extends SuperView {
 	JButton btnLogin = new JButton(new ImageIcon("./image/button/login.png")); // 로그인 버튼 이미지
 	
 	public Login() {
-		setTitle("MEGABIC_LOGIN"); // 제목
+		setTitle("MEGABIC_로그인"); // 제목
 		setSize(600, 400); // 사이즈
 		setLayout(null); // 레이아웃 설정 안함
 		setResizable(false); // 화면 조절 안 됨

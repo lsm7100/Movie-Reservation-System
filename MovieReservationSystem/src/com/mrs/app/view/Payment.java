@@ -18,11 +18,11 @@ import com.mrs.app.Movie;
 public class Payment extends SuperView {
 
 	JLabel accName = new JLabel("결제 내역 확인");
-	JButton preView = new JButton(new ImageIcon("./image/button/previous.png"));
-	JButton nextView = new JButton(new ImageIcon("./image/button/nextButton.png"));
+	JButton preView = new JButton(new ImageIcon("./image/button/pre.png"));
+	JButton nextView = new JButton(new ImageIcon("./image/button/next.png"));
 
 	public Payment() {
-		setTitle("MEGABIC_고객정보");
+		setTitle("MEGABIC_결제");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
@@ -31,8 +31,8 @@ public class Payment extends SuperView {
 		accName.setBounds(100, 140, 200, 50);
 
 		accName.setFont(new Font("굴림", Font.BOLD, 20));
-		preView.setBounds(90, 370, 90, 35);
-		nextView.setBounds(700, 370, 90, 35);
+		preView.setBounds(30, 200, 17, 39);
+		nextView.setBounds(850, 200, 17, 39);
 	}
 
 	public void createwindows() {
@@ -47,16 +47,16 @@ public class Payment extends SuperView {
 		preView.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showSeatSelection(main); // 버튼을 누르면 Register로 넘어감
+				dispose();
+				main.showSeatSelection(main); 
 			}
 		});
 
 		nextView.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showFinalConfirmation(main); // 버튼을 누르면 Register로 넘어감
+				dispose();
+				main.showFinalConfirmation(main); 
 			}
 		});
 

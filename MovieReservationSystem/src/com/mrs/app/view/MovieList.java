@@ -23,14 +23,14 @@ public class MovieList extends SuperView {
 	JButton b3 = new JButton(new ImageIcon("./image/three.jpg"));
 	JButton previous = new JButton(new ImageIcon("./image/button/reservation.png"));
 	JButton movieList = new JButton(new ImageIcon("./image/button/Movielist.png"));
-	JButton preView = new JButton(new ImageIcon("./image/button/previous.png"));
+	JButton preView = new JButton(new ImageIcon("./image/button/pre.png"));
 
 	JLabel lab1 = new JLabel("999명");
 	JLabel lab2 = new JLabel("999명");
 	JLabel lab3 = new JLabel("999명");
 
 	public MovieList() {
-		setTitle("MEGABIC");
+		setTitle("MEGABIC_영화리스트");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
@@ -46,9 +46,9 @@ public class MovieList extends SuperView {
 		}
 		pack();
 
-		b1.setBounds(64, 124, 160, 230);
-		b2.setBounds(342, 124, 160, 230);
-		b3.setBounds(606, 124, 160, 230);
+		b1.setBounds(68, 128, 160, 230);
+		b2.setBounds(347, 128, 160, 230);
+		b3.setBounds(612, 128, 160, 230);
 
 		lab1.setBounds(160, 376, 100, 15);
 		lab2.setBounds(450, 376, 100, 15);
@@ -58,7 +58,8 @@ public class MovieList extends SuperView {
 		lab2.setForeground(Color.WHITE);
 		lab3.setForeground(Color.WHITE);
 
-		preView.setBounds(30, 394, 90, 35);
+		preView.setBounds(30, 200, 17, 39);
+		
 
 		b1.addActionListener(new ActionListener() {
 			@Override

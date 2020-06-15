@@ -15,27 +15,28 @@ public class SeatSelection extends SuperView {
 
 	private static final long serialVersionUID = -7740443590532007754L;
 
-	JButton preView = new JButton(new ImageIcon("./image/button/previous.png"));
-	JButton nextView = new JButton(new ImageIcon("./image/button/nextButton.png"));
+	JButton preView = new JButton(new ImageIcon("./image/button/pre.png"));
+	JButton nextView = new JButton(new ImageIcon("./image/button/next.png"));
 	
 	JButton seat_A1 = new JButton(new ImageIcon("./image/button/seatA1.png"));
 	JButton seat_A2 = new JButton(new ImageIcon("./image/button/seatA2.png"));
 	JButton seat_A3= new JButton(new ImageIcon("./image/button/seatA3.png"));
 	
-
+	
+	
 	public SeatSelection() {
-		setTitle("MEGABIC");
+		setTitle("MEGABIC-좌석선택");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
 		createwindows();
 
-		preView.setBounds(90, 370, 90, 35);
-		nextView.setBounds(700, 370, 90, 35);
+		preView.setBounds(30, 200, 17, 39);
+		nextView.setBounds(850, 200, 17, 39);
 	
-		seat_A1.setBounds(194, 215, 78, 75);
-		seat_A2.setBounds(425, 215, 78, 75);
-		seat_A3.setBounds(649, 214, 78, 75);
+		seat_A1.setBounds(198, 218, 78, 75);
+		seat_A2.setBounds(429, 218, 78, 75);
+		seat_A3.setBounds(652, 218, 78, 75);
 	
 	}
 	
@@ -52,19 +53,35 @@ public class SeatSelection extends SuperView {
 		preView.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showMovieList(main); // 버튼을 누르면 Register로 넘어감
+				dispose(); 
+				main.showMovieList(main);
 			}
 		});
 
-		nextView.addActionListener(new ActionListener() {
+		seat_A1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showPayment(main); // 버튼을 누르면 Register로 넘어감
+				dispose(); 
+				main.showPayment(main); 
 			}
 		});
 
+		seat_A2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose(); 
+				main.showPayment(main); 
+			}
+		});
+		
+		seat_A3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose(); 
+				main.showPayment(main); 
+			}
+		});
+		
 		add(preView);
 		add(nextView);
 		add(seat_A1);
@@ -75,11 +92,5 @@ public class SeatSelection extends SuperView {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
-//	public static void main(String[] args) {
-//
-//		SeatSelection main = new SeatSelection();
-//		main.createwindows();
-//	}
 
 }

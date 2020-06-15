@@ -20,7 +20,7 @@ public class FinalConfirmation extends SuperView {
 	JLabel accName = new JLabel("최종확인");
 	
 	public FinalConfirmation() {
-		setTitle("MEGABIC");
+		setTitle("MEGABIC_예매내역");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
@@ -30,7 +30,8 @@ public class FinalConfirmation extends SuperView {
 		accName.setFont(new Font("굴림", Font.BOLD, 20));
 		
 		
-		completion.setBounds(700, 370, 90, 35);
+		completion.setBounds(720, 370, 90, 35);
+		completion.setBorderPainted(false);
 	}
 
 	public void createwindows() {
@@ -45,8 +46,8 @@ public class FinalConfirmation extends SuperView {
 		completion.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showAccountInfo(main); // 버튼을 누르면 Register로 넘어감
+				dispose();
+				main.showAccountInfo(main); 
 			}
 		});
 
@@ -56,11 +57,5 @@ public class FinalConfirmation extends SuperView {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-//
-//	public static void main(String[] args) {
-//
-//		SeatSelection main = new SeatSelection();
-//		main.createwindows();
-//	}
-//
+
 }

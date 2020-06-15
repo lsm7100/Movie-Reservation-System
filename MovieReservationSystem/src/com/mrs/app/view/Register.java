@@ -18,12 +18,12 @@ public class Register extends SuperView {
 	private static final long serialVersionUID = 4309338501451187572L;
 
 	JTextField rgName, rgId;
-	JButton btnCheck = new JButton(new ImageIcon("./image/button/check.png")); // ��ư�� �̹����� �ִ´�
-	JButton btnPrevious = new JButton(new ImageIcon("./image/button/previous.png")); // ��ư�� �̹����� �ִ´�
+	JButton btnCheck = new JButton(new ImageIcon("./image/button/check.png"));
+	JButton btnPrevious = new JButton(new ImageIcon("./image/button/previous.png")); 
 	JPasswordField pw, pwConfirm;
 
 	public Register() {
-		setTitle("MEGABIC_REGISTER");
+		setTitle("MEGABIC_회원가입");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);

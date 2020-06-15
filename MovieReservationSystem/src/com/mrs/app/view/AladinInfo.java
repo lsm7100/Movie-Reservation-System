@@ -1,5 +1,7 @@
 package com.mrs.app.view;
 
+import java.awt.Checkbox;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -15,18 +17,29 @@ public class AladinInfo extends SuperView {
 
 	private static final long serialVersionUID = -7740443590532007754L;
 
-	JButton preView = new JButton(new ImageIcon("./image/button/previous.png"));
-	JButton nextView = new JButton(new ImageIcon("./image/button/nextButton.png"));
+	JButton preView = new JButton(new ImageIcon("./image/button/pre.png"));
+	
 
+	Checkbox movieTime_1 = new Checkbox("06.16 9:00");
+	Checkbox movieTime_2 = new Checkbox("06.16 11:00");
+	Checkbox movieTime_3 = new Checkbox("06.16 20:00");
+	
 	public AladinInfo() {
-		setTitle("MEGABIC");
+		setTitle("MEGABIC_알라딘");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
 		createwindows();
 
-		preView.setBounds(90, 370, 90, 35);
-		nextView.setBounds(700, 370, 90, 35);
+		preView.setBounds(30, 200, 17, 39);
+		
+		
+		movieTime_1.setBounds(420, 260, 90, 30);
+		movieTime_2.setBounds(420, 290, 90, 30);
+		movieTime_3.setBounds(420, 320, 90, 30);
+		movieTime_1.setBackground(Color.WHITE);
+		movieTime_2.setBackground(Color.WHITE);
+		movieTime_3.setBackground(Color.WHITE);
 	}
 
 	public void createwindows() {
@@ -41,30 +54,20 @@ public class AladinInfo extends SuperView {
 		preView.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showMovieList(main); // 버튼을 누르면 Register로 넘어감
+				dispose();
+				main.showMovieList(main); 
 			}
 		});
 
-		nextView.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showSeatSelection(main); // 버튼을 누르면 Register로 넘어감
-			}
-		});
-
+		
 		add(preView);
-		add(nextView);
+		
+		add(movieTime_1);
+		add(movieTime_2);
+		add(movieTime_3);
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-//	public static void main(String[] args) {
-//
-//		MovieInfo main = new MovieInfo();
-//		main.createwindows();
-//	}
-//
 }

@@ -21,7 +21,7 @@ public class AccountInfo extends SuperView {
 	JButton movieReser = new JButton(new ImageIcon("./image/button/reservation.png"));
 	JButton movieList = new JButton(new ImageIcon("./image/button/list.png"));
 
-	JLabel accName = new JLabel("이 름");
+	JLabel accName = new JLabel("성 함");
 	JLabel pointView = new JLabel("포인트");
 
 	public AccountInfo() {
@@ -31,15 +31,19 @@ public class AccountInfo extends SuperView {
 		setResizable(false);
 		createwindows();
 
-		accLogout.setBounds(90, 360, 90, 35);
-		movieReser.setBounds(400, 360, 90, 35);
-		movieList.setBounds(685, 360, 90, 35);
+		accLogout.setBounds(90, 320, 90, 35);
+		movieReser.setBounds(310, 295, 264, 100);
+		movieList.setBounds(685, 320, 90, 35);
 
 		accName.setBounds(310, 150, 200, 50);
 		pointView.setBounds(698, 150, 200, 50);
 
-		accName.setFont(new Font("배달의민족 도현", Font.BOLD, 20));
-		pointView.setFont(new Font("BMDOHYEON", Font.BOLD, 20));
+		accName.setFont(new Font("굴림", Font.BOLD, 20));
+		pointView.setFont(new Font("굴림", Font.BOLD, 20));
+		accLogout.setBorderPainted(false);
+		movieReser.setBorderPainted(false);
+		movieList.setBorderPainted(false);
+
 
 	}
 
@@ -55,24 +59,24 @@ public class AccountInfo extends SuperView {
 		accLogout.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showLogin(main); // 버튼을 누르면 Register로 넘어감
+				dispose();
+				main.showLogin(main);
 			}
 		});
 		
 		movieReser.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showMovieList(main); // 버튼을 누르면 Register로 넘어감
+				dispose(); // 
+				main.showMovieList(main); 
 			}
 		});
 		
 		movieList.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose(); // 기존 화면 꺼짐
-				main.showFinalConfirmation(main); // 버튼을 누르면 Register로 넘어감
+				dispose(); //
+				main.showFinalConfirmation(main); //
 			}
 		});
 
