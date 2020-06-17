@@ -18,18 +18,19 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
-public class InnocenceInfo extends SuperView  {
+public class AladdinInfo extends SuperView {
 
 	private static final long serialVersionUID = -7740443590532007754L;
 
 	JButton preView = new JButton(new ImageIcon("./image/button/pre.png"));
 	
-	JRadioButton movieTime_1 = new JRadioButton("06.16 13:00");
-	JRadioButton movieTime_2 = new JRadioButton("06.16 16:00");
-	JRadioButton movieTime_3 = new JRadioButton("06.16 21:00");
 
-	public InnocenceInfo() {
-		setTitle("MEGABIC_결백");
+	JRadioButton movieTime_1 = new JRadioButton("06.16 9:00");
+	JRadioButton movieTime_2 = new JRadioButton("06.16 11:00");
+	JRadioButton movieTime_3 = new JRadioButton("06.16 20:00");
+	
+	public AladdinInfo() {
+		setTitle("MEGABIC_알라딘");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
@@ -37,7 +38,8 @@ public class InnocenceInfo extends SuperView  {
 		createwindows();
 
 		preView.setBounds(30, 200, 17, 39);
-
+		
+		
 		movieTime_1.setBounds(420, 260, 90, 30);
 		movieTime_2.setBounds(420, 290, 90, 30);
 		movieTime_3.setBounds(420, 320, 90, 30);
@@ -45,20 +47,18 @@ public class InnocenceInfo extends SuperView  {
 		movieTime_2.setBackground(Color.WHITE);
 		movieTime_3.setBackground(Color.WHITE);
 		
-		ButtonGroup group = new ButtonGroup();
+	ButtonGroup group = new ButtonGroup();
 	
 		
 		group.add(movieTime_1);
 		group.add(movieTime_2);
 		group.add(movieTime_3);
-
-		
 	}
 
 	public void createwindows() {
 
 		try {
-			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/innocenWindow.png")))));
+			setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./image/aladinWindow.png")))));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -68,9 +68,10 @@ public class InnocenceInfo extends SuperView  {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				main.showMovieList(main);
+				main.showMovieList(main); 
 			}
 		});
+		
 		
 		movieTime_1.addItemListener(new ItemListener() {
 			@Override
@@ -116,10 +117,11 @@ public class InnocenceInfo extends SuperView  {
 				}
 			}
 		});
-			
 
+
+		
 		add(preView);
-
+		
 		add(movieTime_1);
 		add(movieTime_2);
 		add(movieTime_3);
@@ -128,4 +130,6 @@ public class InnocenceInfo extends SuperView  {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+
+	
 }

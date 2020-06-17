@@ -29,8 +29,10 @@ public class AccountInfo extends SuperView {
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
+		
 		createwindows();
 
+		
 		accLogout.setBounds(90, 320, 90, 35);
 		movieReser.setBounds(310, 295, 264, 100);
 		movieList.setBounds(685, 320, 90, 35);
@@ -43,6 +45,7 @@ public class AccountInfo extends SuperView {
 		accLogout.setBorderPainted(false);
 		movieReser.setBorderPainted(false);
 		movieList.setBorderPainted(false);
+		
 
 
 	}

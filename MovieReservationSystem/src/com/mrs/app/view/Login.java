@@ -32,6 +32,9 @@ public class Login extends SuperView {
 		setLayout(null); // 레이아웃 설정 안함
 		setResizable(false); // 화면 조절 안 됨
 		createwindows(); 
+		btnRegister.setBorderPainted(false);
+		btnLogin.setBorderPainted(false);
+		
 	}
 
 	public void createwindows() {
@@ -46,8 +49,8 @@ public class Login extends SuperView {
 
 		idField.setBounds(400, 160, 200, 40);
 		pwField.setBounds(400, 250, 200, 40);
-		btnLogin.setBounds(700, 189, 100, 35);
-		btnRegister.setBounds(700, 250, 100, 35);
+		btnLogin.setBounds(500, 340, 100, 35);
+		btnRegister.setBounds(380, 340, 100, 35);
 
 		btnLogin.setBorderPainted(true);
 		btnLogin.setFocusPainted(false);

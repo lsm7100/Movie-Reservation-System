@@ -4,14 +4,14 @@ import javax.swing.JFrame;
 
 import com.mrs.app.view.AccountInfo;
 import com.mrs.app.view.Login;
-import com.mrs.app.view.AladinInfo;
+import com.mrs.app.view.AladdinInfo;
 import com.mrs.app.view.FinalConfirmation;
 import com.mrs.app.view.GreatestInfo;
 import com.mrs.app.view.InnocenceInfo;
 import com.mrs.app.view.MovieList;
 import com.mrs.app.view.Payment;
 import com.mrs.app.view.Register;
-import com.mrs.app.view.SeatSelection;
+import com.mrs.app.view.SheetSelection;
 
 public class Movie extends JFrame {
 
@@ -19,13 +19,13 @@ public class Movie extends JFrame {
 
 	Login login;
 	MovieList movieList;
-	AladinInfo movieInfo;
+	AladdinInfo movieInfo;
 	Register register;
 	AccountInfo accountInfo;
-	AladinInfo aladinInfo;
+	AladdinInfo aladinInfo;
 	GreatestInfo greatestInfo;
 	InnocenceInfo innocenceInfo; 
-	SeatSelection seatSelection;
+	SheetSelection seatSelection;
 	Payment payment;
 	FinalConfirmation finalConfirmation;
 	
@@ -64,15 +64,15 @@ public class Movie extends JFrame {
 
 
 	public void showAladinInfo(Movie main) {
-		this.aladinInfo = new AladinInfo(); 
+		this.aladinInfo = new AladdinInfo(); 
 		this.aladinInfo.setMain(main);
 	}
 	public void showGreatestInfo(Movie main) {
 		this.greatestInfo = new GreatestInfo(); 
 		this.greatestInfo.setMain(main);
 	}
-	public void showSeatSelection(Movie main) {
-		this.seatSelection = new SeatSelection(); 
+	public void showSheetSelection(Movie main) {
+		this.seatSelection = new SheetSelection(); 
 		this.seatSelection.setMain(main);	
 	}
 	public void showPayment(Movie main) {

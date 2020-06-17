@@ -19,20 +19,24 @@ public class Payment extends SuperView {
 
 	JLabel accName = new JLabel("결제 내역 확인");
 	JButton preView = new JButton(new ImageIcon("./image/button/pre.png"));
-	JButton nextView = new JButton(new ImageIcon("./image/button/next.png"));
+	JButton complete = new JButton(new ImageIcon("./image/button/complete.png"));
 
 	public Payment() {
 		setTitle("MEGABIC_결제");
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
+		
 		createwindows();
-
+		complete.setBorderPainted(false);
+		
 		accName.setBounds(100, 140, 200, 50);
 
 		accName.setFont(new Font("굴림", Font.BOLD, 20));
 		preView.setBounds(30, 200, 17, 39);
-		nextView.setBounds(850, 200, 17, 39);
+		complete.setBounds(380,350, 120, 54);
+		
+		
 	}
 
 	public void createwindows() {
@@ -48,11 +52,11 @@ public class Payment extends SuperView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				main.showSeatSelection(main); 
+				main.showSheetSelection(main); 
 			}
 		});
 
-		nextView.addActionListener(new ActionListener() {
+		complete.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -61,7 +65,7 @@ public class Payment extends SuperView {
 		});
 
 		add(preView);
-		add(nextView);
+		add(complete);
 
 		add(accName);
 

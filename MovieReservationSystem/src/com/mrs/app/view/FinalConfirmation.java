@@ -24,6 +24,7 @@ public class FinalConfirmation extends SuperView {
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
+		
 		createwindows();
 
 		accName.setBounds(100, 140, 200, 50);	

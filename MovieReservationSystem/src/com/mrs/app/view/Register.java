@@ -27,12 +27,12 @@ public class Register extends SuperView {
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
-
+		
 		rgName = new JTextField(25);
 		rgId = new JTextField(25);
 		pw = new JPasswordField(25);
 		pwConfirm = new JPasswordField(25);
-
+		
 		createwindows();
 	}
 

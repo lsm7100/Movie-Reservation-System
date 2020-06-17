@@ -34,6 +34,7 @@ public class MovieList extends SuperView {
 		setSize(600, 400);
 		setLayout(null);
 		setResizable(false);
+	
 		createwindows();
 	}
 
@@ -46,9 +47,9 @@ public class MovieList extends SuperView {
 		}
 		pack();
 
-		b1.setBounds(68, 128, 160, 230);
-		b2.setBounds(347, 128, 160, 230);
-		b3.setBounds(612, 128, 160, 230);
+		b1.setBounds(64, 125, 160, 230);
+		b2.setBounds(343, 125, 160, 230);
+		b3.setBounds(608, 125, 160, 230);
 
 		lab1.setBounds(160, 376, 100, 15);
 		lab2.setBounds(450, 376, 100, 15);

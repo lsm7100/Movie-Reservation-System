@@ -8,10 +8,11 @@ import java.util.ArrayList;
 
 import com.mrs.app.db.util.DbConnect;
 import com.mrs.app.db.vo.MovieVO;
+import com.mrs.app.db.vo.User_IdVO;
 
 public class MovieQueryService {
 	
-	private ArrayList<MovieVO> getMovieInfoList() { // ´ÙÁß MovieÇà 
+	private ArrayList<MovieVO> getMovieInfoList() { // ï¿½ï¿½ï¿½ï¿½ Movieï¿½ï¿½ 
 		ArrayList<MovieVO> vo = new ArrayList<MovieVO>();
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -22,11 +23,11 @@ public class MovieQueryService {
 		query.append(String.format("SELECT * FROM MOVIE"));
 		
 		try {
-			conn = DbConnect.getConnection(); // DB Connection °¡Á®¿À±â
-			stmt = conn.prepareStatement(query.toString()); // ½ÇÇà ÇÒ Äõ¸® ÀÔ·Â
-			rs = stmt.executeQuery(); // Äõ¸®ÀÇ °á°ú¸¦ ResultSet¿¡ ´ëÀÔÇØÁØ´Ù.
+			conn = DbConnect.getConnection(); // DB Connection ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			stmt = conn.prepareStatement(query.toString()); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+			rs = stmt.executeQuery(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ResultSetï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 
-			while(rs.next()) { // Á¶È¸µÈ °ªÀÌ ÀÖ´Ù¸é if¹® ¾ÈÀ¸·Î ½ÇÇàÀÌ µÈ´Ù.
+			while(rs.next()) { // ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
 				MovieVO tempVO = new MovieVO();
 				tempVO.setmNum(rs.getInt(1)); // mNum
 				tempVO.setmName(rs.getString(2)); // mName
@@ -46,8 +47,9 @@ public class MovieQueryService {
 		}
 		return vo;
 	}
+
 	
-	private MovieVO getMovieInfo(int mNum) { // ´ÜÀÏ MovieÇà  
+	private User_IdVO getUserInfo(?,?) { // ï¿½ï¿½ï¿½ï¿½ Movieï¿½ï¿½  
 		MovieVO vo = new MovieVO();
 		
 		Connection conn = null;
@@ -59,11 +61,11 @@ public class MovieQueryService {
 		query.append(String.format("SELECT * FROM MOVIE WHERE MNUM = %d", mNum));
 		
 		try {
-			conn = DbConnect.getConnection(); // DB Connection °¡Á®¿À±â
-			stmt = conn.prepareStatement(query.toString()); // ½ÇÇà ÇÒ Äõ¸® ÀÔ·Â
-			rs = stmt.executeQuery(); // Äõ¸®ÀÇ °á°ú¸¦ ResultSet¿¡ ´ëÀÔÇØÁØ´Ù.
+			conn = DbConnect.getConnection(); // DB Connection ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			stmt = conn.prepareStatement(query.toString()); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+			rs = stmt.executeQuery(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ResultSetï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 
-			if(rs.next()) { // Á¶È¸µÈ °ªÀÌ ÀÖ´Ù¸é if¹® ¾ÈÀ¸·Î ½ÇÇàÀÌ µÈ´Ù.
+			if(rs.next()) { // ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
 				vo.setmNum(rs.getInt(1)); // mNum
 				vo.setmName(rs.getString(2)); // mName
 				vo.setmDate(rs.getDate(3)); // mDate
@@ -80,6 +82,4 @@ public class MovieQueryService {
 		}
 		return vo;
 	}
-	
-	
 }

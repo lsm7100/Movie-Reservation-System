@@ -8,7 +8,7 @@ public class MovieVO {
 	private String mName;
 	private Date mDate;
 	private int mPrice;
-	private int mSeat;
+	private int mSheet;
 
 	public int getmNum() {
 		return mNum;
@@ -43,11 +43,11 @@ public class MovieVO {
 	}
 
 	public int getmSeat() {
-		return mSeat;
+		return mSheet;
 	}
 
 	public void setmSeat(int mSeat) {
-		this.mSeat = mSeat;
+		this.mSheet = mSheet;
 	}
 
 }
